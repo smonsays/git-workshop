@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Simon Schug">
+  <meta name="dcterms.date" content="2019-04-26">
+  <title>Git Workshop</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="./reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="./reveal.js/css/theme/robolung.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? './reveal.js/css/print/pdf.css' : './reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="./reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="line top"></div>
+<div class="line bottom"></div>
+<div class="line left"></div>
+<div class="line right"></div>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Git Workshop</h1>
+  <p class="author">Simon Schug</p>
+  <p class="date">26 April 2019</p>
+</section>
+
+<section><section id="motivation" class="title-slide slide level1" data-background="#FF8CB3"><h1>Motivation</h1></section><section id="organized-version-control" class="slide level2">
+<h2>Organized version control</h2>
+<p>Overcome</p>
+<blockquote>
+<p>document_2019_final_FINAL!!.docx</p>
+</blockquote>
+<ul>
+<li>Good integration into common editors (Rstudio, vscode, PyCharm, etc.)</li>
+</ul>
+</section><section id="collaboration" class="slide level2">
+<h2>Collaboration</h2>
+<p>Stop sending code per mail to collaborators</p>
+<blockquote>
+<p>Please find attached code_v3.zip</p>
+</blockquote>
+</section></section>
+<section><section id="version-control" class="title-slide slide level1" data-background="#FF8CB3"><h1>Version Control</h1></section><section id="setting-up-git" class="slide level2">
+<h2>Setting up git</h2>
+</section><section id="creating-a-local-repository" class="slide level2">
+<h2>Creating a local repository</h2>
+<ul>
+<li>git init</li>
+</ul>
+</section><section id="tracking-changes" class="slide level2">
+<h2>Tracking changes</h2>
+<ul>
+<li>Many commits with smaller changes are easier to read and review</li>
+</ul>
+</section><section id="traveling-back-through-time" class="slide level2">
+<h2>Traveling back through time</h2>
+<ul>
+<li>git checkout</li>
+<li>git diff</li>
+<li>gitg/gitkraken</li>
+</ul>
+</section><section id="ignoring-things" class="slide level2">
+<h2>Ignoring things</h2>
+<ul>
+<li>Use the .gitignore file to ignore certain files/folders</li>
+</ul>
+</section></section>
+<section><section id="collaboration-1" class="title-slide slide level1" data-background="#FF8CB3"><h1>Collaboration</h1></section><section id="git-repository-hosting-services" class="slide level2">
+<h2>Git-repository hosting services</h2>
+<ul>
+<li>Github vs. Gitlab</li>
+<li>Self-hosting</li>
+</ul>
+</section><section id="create-a-remote-repository" class="slide level2">
+<h2>Create a remote repository</h2>
+</section><section id="choose-a-license" class="slide level2">
+<h2>Choose a license</h2>
+<ul>
+<li>Public work should transparently handle copyright with a license</li>
+<li>You are not a lawyer? Don’t write your own!</li>
+<li>Flavors of Open Source: <a href="https://choosealicense.com/">choosealicense.com</a> helps</li>
+</ul>
+</section><section id="create-a-readme" class="slide level2">
+<h2>Create a readme</h2>
+<ul>
+<li>Markdown</li>
+</ul>
+</section><section id="setup-ssh-keys" class="slide level2">
+<h2>Setup SSH keys</h2>
+<ul>
+<li>SSH keys</li>
+</ul>
+</section><section id="push-pull" class="slide level2">
+<h2>Push &amp; Pull</h2>
+</section><section id="conflicts" class="slide level2">
+<h2>Conflicts</h2>
+<ul>
+<li>When multiple people change the same file simultaneously, conflicts can arise</li>
+<li>Resolve overlapping changes</li>
+<li><a href="https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git">StackOverflow Help</a></li>
+</ul>
+</section><section id="open-science" class="slide level2">
+<h2>Open Science</h2>
+<p>Open scientific work is more useful and more highly cited than closed. - How to handle citations</p>
+</section></section>
+<section><section id="moooore-optional" class="title-slide slide level1" data-background="#FF8CB3"><h1>Moooore (Optional)</h1></section><section id="git-in-rstudio" class="slide level2">
+<h2>Git in RStudio</h2>
+<ul>
+<li>Rstudio projects automatically handle git repositories</li>
+</ul>
+</section><section id="issues-tracker" class="slide level2">
+<h2>Issues tracker</h2>
+</section><section id="wiki" class="slide level2">
+<h2>Wiki</h2>
+</section><section id="github-pages" class="slide level2">
+<h2>Github pages</h2>
+</section></section>
+    </div>
+  </div>
+
+  <script src="./reveal.js/lib/js/head.min.js"></script>
+  <script src="./reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: './reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: './reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+#!/bin/bash
+# Build revealjs presentation from Markdown file using Pandoc
+# Revealjs configuration found at https://github.com/hakimel/reveal.js#configuration
+pandoc -t revealjs -s -o git_simon-schug_20190426.html git_simon-schug_20190426.md --slide-level 2 -V revealjs-url=./reveal.js -V theme=robolung -V slideNumber=true -V hash=true
+#-V controls=false
+
+# Insert custom html that creates the borders in the used theme
+sed -ie '/^<body>/a <div class="line top"></div>\n<div class="line bottom"></div>\n<div class="line left"></div>\n<div class="line right"></div>' git_simon-schug_20190426.html
+
+# HACK: sed produces an unnecessary backup copy and I couldn't figure out how to disable it..
+rm git_simon-schug_20190426.htmle
+
+#pandoc -t beamer git_simon-schug_20190426.md -o beamer.pdf
+#<div class="line top"></div>\n<div class="line bottom"></div>\n<div class="line left"></div>\n<div class="line right"></div>
