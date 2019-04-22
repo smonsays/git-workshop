@@ -198,9 +198,9 @@ body {
 .reveal blockquote {
   display: block;
   position: relative;
-  width: 70%;
+  width: 90%;
   margin: 20px auto;
-  padding: 5px;
+  padding: 10px;
   /*font-style: italic;*/
   font-size: 0.9em;
   background: #FF4081;
@@ -229,16 +229,19 @@ body {
   font-family: monospace;
   text-transform: none;
   /* CUSTOMIZED */
-  padding: 15px;
+  padding: 2px;
   color: #FF4081;
-  background: rgba(21.2, 21.2, 21.2, 0.8);
-  font-size: 1.4em; }
+  background: rgba(21.2, 21.2, 21.2, 0.8); }
 
 .reveal pre code {
   display: block;
   overflow: auto;
   max-height: 400px;
-  word-wrap: normal; }
+  word-wrap: normal;
+  /* CUSTOMIZED */
+  font-size: 1.3em;
+  line-height: 1.5em;
+  padding: 20px; }
 
 .reveal table {
   margin: auto;

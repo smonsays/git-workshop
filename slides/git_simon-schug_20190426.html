@@ -43,7 +43,7 @@
   <p class="date">26 April 2019</p>
 </section>
 
-<section><section id="motivation" class="title-slide slide level1" data-background="#FF8CB3"><h1>Motivation</h1></section><section id="organized-version-control" class="slide level2">
+<section><section id="i.-introduction" class="title-slide slide level1" data-background="##FF4081"><h1>I. Introduction</h1></section><section id="organized-version-control" class="slide level2">
 <h2>Organized version control</h2>
 <p>Overcome</p>
 <blockquote>
@@ -59,7 +59,46 @@
 <p>Please find attached code_v3.zip</p>
 </blockquote>
 </section></section>
-<section><section id="version-control" class="title-slide slide level1" data-background="#FF8CB3"><h1>Version Control</h1></section><section id="setting-up-git" class="slide level2">
+<section><section id="ii.-setup" class="title-slide slide level1" data-background="#FF4081"><h1>II. Setup</h1></section><section id="linux-️" class="slide level2">
+<h2>Linux 🐧️</h2>
+<p>You are probably already done 😎️.</p>
+<ol type="1">
+<li>Open a terminal</li>
+<li>Enter the command <code>git</code></li>
+<li>If the command was not found install git:</li>
+</ol>
+<pre><code># e.g. under Ubuntu / Debian
+sudo apt install git</code></pre>
+</section><section id="windows-️" class="slide level2">
+<h2>Windows 🏢️</h2>
+<ol type="1">
+<li>Go to <a href="https://git-scm.com/downloads">git-scm.com</a></li>
+<li>Download latest source release for Windows</li>
+<li>Step through the installer (keep defaults)<br />
+</li>
+</ol>
+<blockquote>
+<p>In case the <em>Windows Subsystem for Linux</em> is installed, you could also use the Linux instructions (it’s up to you 👈️).</p>
+</blockquote>
+</section><section id="mac-os-️" class="slide level2">
+<h2>Mac OS 🍎️</h2>
+<p>You have 2 options:</p>
+<ol type="1">
+<li><p>Use <a href="https://brew.sh/">brew</a> (<em>preferred 👍️</em>)</p>
+<ul>
+<li>Install brew as outlined in section <em>Install Homebrew</em></li>
+<li>Enter <code>brew install git</code> into the terminal</li>
+<li>Check if it works by entering <code>git</code></li>
+</ul></li>
+<li><p>Use the <a href="https://git-scm.com/downloads">*.dmg installer</a></p>
+<ul>
+<li>Download latest source release for MacOS</li>
+<li>Open the dmg and right-click open the *pkg to install</li>
+<li>Open a terminal &amp; check if it works by entering <code>git</code></li>
+</ul></li>
+</ol>
+</section></section>
+<section><section id="iii.-version-control" class="title-slide slide level1" data-background="#FF4081"><h1>III. Version Control</h1></section><section id="setting-up-git" class="slide level2">
 <h2>Setting up git</h2>
 </section><section id="creating-a-local-repository" class="slide level2">
 <h2>Creating a local repository</h2>
@@ -76,7 +115,7 @@
 <ul>
 <li>git checkout</li>
 <li>git diff</li>
-<li>gitg/gitkraken</li>
+<li>gitk/gitg/github-desktop</li>
 </ul>
 </section><section id="ignoring-things" class="slide level2">
 <h2>Ignoring things</h2>
@@ -84,7 +123,7 @@
 <li>Use the .gitignore file to ignore certain files/folders</li>
 </ul>
 </section></section>
-<section><section id="collaboration-1" class="title-slide slide level1" data-background="#FF8CB3"><h1>Collaboration</h1></section><section id="git-repository-hosting-services" class="slide level2">
+<section><section id="iv.-collaboration" class="title-slide slide level1" data-background="#FF4081"><h1>IV. Collaboration</h1></section><section id="git-repository-hosting-services" class="slide level2">
 <h2>Git-repository hosting services</h2>
 <ul>
 <li>Github vs. Gitlab</li>
@@ -122,7 +161,7 @@
 <h2>Open Science</h2>
 <p>Open scientific work is more useful and more highly cited than closed. - How to handle citations</p>
 </section></section>
-<section><section id="moooore-optional" class="title-slide slide level1" data-background="#FF8CB3"><h1>Moooore (Optional)</h1></section><section id="git-in-rstudio" class="slide level2">
+<section><section id="moooore-optional" class="title-slide slide level1" data-background="#FF4081"><h1>+++Moooore (Optional)</h1></section><section id="git-in-rstudio" class="slide level2">
 <h2>Git in RStudio</h2>
 <ul>
 <li>Rstudio projects automatically handle git repositories</li>
@@ -149,6 +188,8 @@
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
 
         // Optional reveal.js plugins
         dependencies: [
