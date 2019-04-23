@@ -95,12 +95,12 @@ Git is primarily used in the command line (Bash). To get started, here are some 
 # III. Version Control {data-background=#FF4081}
 
 ## Configuring git
-Since this is our first time with git, we tell it who we are 🙋️:
+Since this is your first time with git, tell it who you are 🙋️:
 ```
 git config --global user.name "Your Name"
 git config --global user.email "youremail@email.com"
 ```
-which text editor ✍️ we prefer:
+which text editor ✍️ you prefer:
 ```
 git config --global core.editor "nano"
 ```
@@ -142,30 +142,35 @@ Let's go through the [modify-add-commit cycle](https://git-scm.com/book/en/v2/Gi
 `git commit -m "Meaningful commit message"`
 4. Repeat 🔁️
 
-> Use `git status` to monitor the current status of your repository.
+> Use `git status` to monitor the current status of your repository. What tricks does it tell you?
 
 ## Ignoring things
 Files you don't want to track can be ignored 😑️.
 
 - Create a .gitignore text file
 - Add `files`, `folders/` or whole patterns `*.dat`
-- You can exclude certain files from being ignored `!final.dat `
+- Exclude specific files from being ignored with `!filename `
+
+> For common use-cases prefabricated .gitignore files most likely already exist 🌐️.
 
 ## Exploring history
-How can we look at all the tracked changes? 👁️
+How can you see the tracked changes 👁️? 
 
-- Use `git log` to look at the repository's history 
-- Change something in a file and try `git diff`
-- Commits can be referred to using its ID. Try comparing a file to a specific commit.
+- `git log` shows the commit history of the repository
+- `git diff` shows changes within files
+- Use commit IDs to compare between specific commits
 
 > The most recent commit is referred to by the identifier `HEAD`. What does `git diff HEAD~2` do?
  
 <aside class="notes">
-- Limit log size with `git log -3` and show diffs with `-p`
+Git log:
+- Limit log size with `-3` and show diffs with `-p`
 - Press `/` and type something to search. Navigate with `N`
-- `git diff --color-words` shows changes on word level
-- `git diff --staged` shows changes between staging area and repository
-- Use only first few characters to compare to commit, e.g. `git diff b12a52e [filename]`
+
+git diff:
+- `--color-words` shows changes on word level
+- `--staged` shows changes between staging area and repository
+- Compare two commit ids: `git diff b12a52e a983d1 -- [filename]`
 
 A Git commit ID is a SHA-1 hash of every important thing about the commit, e.g.:
 
@@ -182,26 +187,19 @@ A Git commit ID is a SHA-1 hash of every important thing about the commit, e.g.:
 
 
 ## Time traveling
-**TODO: Exploring history done?**
-_Oops_ I made some bad choices, how can I go back in time? 🕓️
+_Oops I made some bad choices, how can I go back in time?_ 🕓️
 
-- Can revert a single file (careful❗️) with\
-`git checkout [commit-id] [filename]`
+- Revert a single file (this deletes non-commited changes❗️) with `git checkout [commit-id] [filename]`
 - Time travel with all files using\
 `git checkout -b [new-branch] [commit-id]`
 - Careful, don't use `git checkout [commit-id]`. It will make you [loose your HEAD](https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit)
 
-> What is the detached HEAD state & how can you avoid it?
+> What is the detached HEAD state? How can you avoid it?
 
 <aside class="notes">
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
+In 'detached HEAD' state you can look around, make experimental changes and commit them without impacting any branches (i.e. commits are not recorded (but they exist)).
 
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-
-`git checkout -b <new-branch-name>`
+Since files can be reverted individually, it makes sense to heavily modularize your work.
 
 </aside>
 

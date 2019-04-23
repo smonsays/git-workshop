@@ -43,6 +43,10 @@
   <p class="date">26 April 2019</p>
 </section>
 
+<section class="slide level2">
+
+<p><strong>TODO</strong> YOU vs WE</p>
+</section>
 <section><section id="i.-introduction" class="title-slide slide level1" data-background="#FF4081"><h1>I. Introduction</h1></section><section id="what-is-git" class="slide level2">
 <h2>What is git?</h2>
 <p><img src="./figures/git.svg" alt="git-logo" width="15%"/></p>
@@ -130,10 +134,10 @@ sudo apt install git</code></pre>
 </section></section>
 <section><section id="iii.-version-control" class="title-slide slide level1" data-background="#FF4081"><h1>III. Version Control</h1></section><section id="configuring-git" class="slide level2">
 <h2>Configuring git</h2>
-<p>Since this is our first time with git, we tell it who we are 🙋️:</p>
+<p>Since this is your first time with git, tell it who you are 🙋️:</p>
 <pre><code>git config --global user.name &quot;Your Name&quot;
 git config --global user.email &quot;youremail@email.com&quot;</code></pre>
-<p>which text editor ✍️ we prefer:</p>
+<p>which text editor ✍️ you prefer:</p>
 <pre><code>git config --global core.editor &quot;nano&quot;</code></pre>
 <p>and check ☑️ if everything is set up properly:</p>
 <pre><code>git config --list</code></pre>
@@ -173,7 +177,7 @@ git config --global user.email &quot;youremail@email.com&quot;</code></pre>
 <li>Repeat 🔁️</li>
 </ol>
 <blockquote>
-<p>Use <code>git status</code> to monitor the current status of your repository.</p>
+<p>Use <code>git status</code> to monitor the current status of your repository. What tricks does it tell you?</p>
 </blockquote>
 </section><section id="ignoring-things" class="slide level2">
 <h2>Ignoring things</h2>
@@ -181,27 +185,25 @@ git config --global user.email &quot;youremail@email.com&quot;</code></pre>
 <ul>
 <li>Create a .gitignore text file</li>
 <li>Add <code>files</code>, <code>folders/</code> or whole patterns <code>*.dat</code></li>
-<li>You can exclude certain files from being ignored <code>!final.dat</code></li>
+<li>Exclude specific files from being ignored with <code>!filename</code></li>
 </ul>
+<blockquote>
+<p>For common use-cases prefabricated .gitignore files most likely already exist 🌐️.</p>
+</blockquote>
 </section><section id="exploring-history" class="slide level2">
 <h2>Exploring history</h2>
-<p>How can we look at all the tracked changes? 👁️</p>
+<p>How can you see the tracked changes 👁️?</p>
 <ul>
-<li>Use <code>git log</code> to look at the repository’s history</li>
-<li>Change something in a file and try <code>git diff</code></li>
-<li>Commits can be referred to using its ID. Try comparing a file to a specific commit.</li>
+<li><code>git log</code> shows the commit history of the repository</li>
+<li><code>git diff</code> shows changes within files</li>
+<li>Use <strong>commit IDs</strong> to compare between specific commits</li>
 </ul>
 <blockquote>
 <p>The most recent commit is referred to by the identifier <code>HEAD</code>. What does <code>git diff HEAD~2</code> do?</p>
 </blockquote>
 <aside class="notes">
-<ul>
-<li>Limit log size with <code>git log -3</code> and show diffs with <code>-p</code></li>
-<li>Press <code>/</code> and type something to search. Navigate with <code>N</code></li>
-<li><code>git diff --color-words</code> shows changes on word level</li>
-<li><code>git diff --staged</code> shows changes between staging area and repository</li>
-<li>Use only first few characters to compare to commit, e.g. <code>git diff b12a52e [filename]</code></li>
-</ul>
+<p>Git log: - Limit log size with <code>-3</code> and show diffs with <code>-p</code> - Press <code>/</code> and type something to search. Navigate with <code>N</code></p>
+<p>git diff: - <code>--color-words</code> shows changes on word level - <code>--staged</code> shows changes between staging area and repository - Compare two commit ids: <code>git diff b12a52e a983d1 -- [filename]</code></p>
 <p>A Git commit ID is a SHA-1 hash of every important thing about the commit, e.g.:</p>
 <ul>
 <li>A checksum of the tree contents</li>
@@ -216,16 +218,15 @@ git config --global user.email &quot;youremail@email.com&quot;</code></pre>
 <p><strong>TODO</strong> branches!</p>
 </section><section id="time-traveling" class="slide level2">
 <h2>Time traveling</h2>
-<p><strong>TODO: Exploring history done?</strong> <em>Oops</em> I made some bad choices, how can I go back in time? 🕓️</p>
+<p><strong>TODO: Exploring history done?</strong> <em>Oops I made some bad choices, how can I go back in time?</em> 🕓️</p>
 <ul>
-<li>Can revert a single file (careful❗️) with<br />
-<code>git checkout [commit-id] [filename]</code></li>
+<li>Revert a single file (this deletes non-commited changes❗️) with <code>git checkout [commit-id] [filename]</code></li>
 <li>Time travel with all files using<br />
 <code>git checkout -b [new-branch] [commit-id]</code></li>
 <li>Careful, don’t use <code>git checkout [commit-id]</code>. It will make you <a href="https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit">loose your HEAD</a></li>
 </ul>
 <blockquote>
-<p>What is the detached HEAD state &amp; how can you avoid it?</p>
+<p>What is the detached HEAD state? How can you avoid it?</p>
 </blockquote>
 <aside class="notes">
 <p>You are in ‘detached HEAD’ state. You can look around, make experimental changes and commit them, and you can discard any commits you make in this state without impacting any branches by performing another checkout.</p>
