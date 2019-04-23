@@ -6,6 +6,23 @@ date: 26 April 2019
 
 # I. Introduction {data-background=#FF4081}
 
+## What is git?
+
+<img src="./figures/git.svg" alt="git-logo" width="15%"/>
+
+[Version Control System](https://en.wikipedia.org/wiki/Version_control) for tracking changes in files.
+
+>- See who made what changes when 👀️
+>- Revert back at any time 🕓️
+>- Collaborate with others (even yourself) 🤝️
+
+
+## Concepts
+
+- Keep track of file history by taking snapshots 📸️
+- You decide when to take a snapshot 💪️
+- Repositories can be used locally or with a server 🌐️
+
 ## Organized version control
 Overcome
 
@@ -36,18 +53,22 @@ sudo apt install git
 ```
 
 ## Windows 🏢️
+You have 2 options:
 
-1. Go to [git-scm.com](https://git-scm.com/downloads)
-2. Download latest source release for Windows
-3. Step through the installer (keep defaults)
-\
+1. [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (only Windows 10)
+	
+	- This will install a Linux distribution within Windows
+	- You can use the Linux instructions to install git
 
-> In case the _Windows Subsystem for Linux_ is installed, you could also use the Linux instructions (it's up to you 👈️).
+2. Use the standalone [*.exe installer](https://git-scm.com/downloads)
+
+	- Download latest source release for Windows
+	- Step through the installer (keep defaults)
 
 ## Mac OS 🍎️
 You have 2 options:
 
-1. Use [brew](https://brew.sh/) (_preferred 👍️_)
+1. Use [brew](https://brew.sh/) (_preferred_ 👍️)
 
 	- Install brew as outlined in section _Install Homebrew_
 	- Enter `brew install git` into the terminal
@@ -60,7 +81,7 @@ You have 2 options:
 	- Open a terminal & check if it works by entering `git`
 
 ## Quick Bash Primer
-Git is primarily used in the command line (Bash). To get started, here are some useful commands 
+Git is primarily used in the command line (Bash). To get started, here are some useful commands:
 
 - `pwd` to print the working directory
 - `cd [folder]` to change the working directory
@@ -87,7 +108,7 @@ git config --list
 ```
 
 ## Creating a local repository
-Creating a local git repository is easy:
+Creating a local git repository is easy 👯️:
 
 1. Create a new directory for the repository
 2. Change into the newly created directory with `cd`
@@ -101,30 +122,78 @@ Creating a local git repository is easy:
 
 ## Tracking changes I
 <img src="./figures/git_tracking-changes.svg" alt="tracking-changes" width="130%"/>
-Commits with small changes are easier to read & review💡️
+_Commits with small changes are easier to read & review_ 💡️
+
+<aside class="notes">
+- Think of git as taking snapshots of changes over the life of a project.
+- `git add` specifies what will go in a snapshot by putting things in the staging area
+- `git commit` takes the snapshot, and makes a permanent record of it
+- You could use `git commit --all`, but it’s almost always better to explicitly add things to the staging area to avoid committing changes you forgot you made.
+</aside>
 
 ## Tracking changes II
-Let's go through the [modify-add-commit cycle](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository):
+Let's go through the [modify-add-commit cycle](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository) 🌀️:
 
 1. Create/Change files & folders within your new repository
 2. Add files/folders you want to track: `git add filename`
 3. Record changes as a commit:\
 `git commit -m "Meaningful commit message"`
+4. Repeat 🔁️
 
-> Use `git status` at every step to monitor what happened
-
-## Traveling back through time
-
-- git checkout
-- git diff
-- gitk/gitg/github-desktop
+> Use `git status` to monitor the current status of your repository.
 
 ## Ignoring things
+**TODO**
+What if there are files for which you don't want to track changes?
 
 - Use the .gitignore file to ignore certain files/folders
 
-## Summary of basic git commands
+## Exploring history
+How can we look at all the tracked changes? 👁️
 
+- Use `git log` to look at the repository's history 
+- Change something in a file and try `git diff`
+- Commits can be referred to using its ID. Try comparing a file to a specific commit.
+
+> The most recent commit is referred to by the identifier `HEAD`. What does `git diff HEAD~2` do?
+ 
+<aside class="notes">
+- Limit log size with `git log -3` and show diffs with `-p`
+- Press `/` and type something to search. Navigate with `N`
+- `git diff --color-words` shows changes on word level
+- `git diff --staged` shows changes between staging area and repository
+- Use only first few characters to compare to commit, e.g. `git diff b12a52e [filename]`
+
+A Git commit ID is a SHA-1 hash of every important thing about the commit, e.g.:
+
+- A checksum of the tree contents
+- The parent commit id (if this is a merge, there will be more parents)
+- The author of the commit with timestamp
+- The committer of the commit with timestamp
+- The commit message
+
+</aside>
+
+
+## Time traveling
+Oops I made some bad choices, how can I go back in time? ⌚️
+
+- Revert unstaged changes: `git checkout HEAD [filename]`
+
+- gitk/gitg/github-desktop
+
+
+
+## Basic git commands
+```
+git init				// Initialize local git repository
+git status				// Check status of working tree
+git add [filename]		// Add file(s) to staging area
+git commit -m "message"	// Commit changes to repository
+git log					// Show commit logs
+git diff				// Show changes between commits
+```
+Get a more elaborate git cheatsheet from [GitHub Help](https://github.github.com/training-kit/). 
 
 
 # IV. Collaboration {data-background=#FF4081}

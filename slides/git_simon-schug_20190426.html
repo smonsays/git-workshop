@@ -43,7 +43,23 @@
   <p class="date">26 April 2019</p>
 </section>
 
-<section><section id="i.-introduction" class="title-slide slide level1" data-background="#FF4081"><h1>I. Introduction</h1></section><section id="organized-version-control" class="slide level2">
+<section><section id="i.-introduction" class="title-slide slide level1" data-background="#FF4081"><h1>I. Introduction</h1></section><section id="what-is-git" class="slide level2">
+<h2>What is git?</h2>
+<p><img src="./figures/git.svg" alt="git-logo" width="15%"/></p>
+<p><a href="https://en.wikipedia.org/wiki/Version_control">Version Control System</a> for tracking changes in files.</p>
+<ul>
+<li class="fragment">See who made what changes when 👀️</li>
+<li class="fragment">Revert back at any time 🕓️</li>
+<li class="fragment">Collaborate with others (even yourself) 🤝️</li>
+</ul>
+</section><section id="concepts" class="slide level2">
+<h2>Concepts</h2>
+<ul>
+<li>Keep track of file history by taking snapshots 📸️</li>
+<li>You decide when to take a snapshot 💪️</li>
+<li>Repositories can be used locally or with a server 🌐️</li>
+</ul>
+</section><section id="organized-version-control" class="slide level2">
 <h2>Organized version control</h2>
 <p>Overcome</p>
 <blockquote>
@@ -71,20 +87,24 @@
 sudo apt install git</code></pre>
 </section><section id="windows-️" class="slide level2">
 <h2>Windows 🏢️</h2>
+<p>You have 2 options:</p>
 <ol type="1">
-<li>Go to <a href="https://git-scm.com/downloads">git-scm.com</a></li>
+<li><p><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a> (only Windows 10)</p>
+<ul>
+<li>This will install a Linux distribution within Windows</li>
+<li>You can use the Linux instructions to install git</li>
+</ul></li>
+<li><p>Use the standalone <a href="https://git-scm.com/downloads">*.exe installer</a></p>
+<ul>
 <li>Download latest source release for Windows</li>
-<li>Step through the installer (keep defaults)<br />
-</li>
+<li>Step through the installer (keep defaults)</li>
+</ul></li>
 </ol>
-<blockquote>
-<p>In case the <em>Windows Subsystem for Linux</em> is installed, you could also use the Linux instructions (it’s up to you 👈️).</p>
-</blockquote>
 </section><section id="mac-os-️" class="slide level2">
 <h2>Mac OS 🍎️</h2>
 <p>You have 2 options:</p>
 <ol type="1">
-<li><p>Use <a href="https://brew.sh/">brew</a> (<em>preferred 👍️</em>)</p>
+<li><p>Use <a href="https://brew.sh/">brew</a> (<em>preferred</em> 👍️)</p>
 <ul>
 <li>Install brew as outlined in section <em>Install Homebrew</em></li>
 <li>Enter <code>brew install git</code> into the terminal</li>
@@ -99,7 +119,7 @@ sudo apt install git</code></pre>
 </ol>
 </section><section id="quick-bash-primer" class="slide level2">
 <h2>Quick Bash Primer</h2>
-<p>Git is primarily used in the command line (Bash). To get started, here are some useful commands</p>
+<p>Git is primarily used in the command line (Bash). To get started, here are some useful commands:</p>
 <ul>
 <li><code>pwd</code> to print the working directory</li>
 <li><code>cd [folder]</code> to change the working directory</li>
@@ -119,7 +139,7 @@ git config --global user.email &quot;youremail@email.com&quot;</code></pre>
 <pre><code>git config --list</code></pre>
 </section><section id="creating-a-local-repository" class="slide level2">
 <h2>Creating a local repository</h2>
-<p>Creating a local git repository is easy:</p>
+<p>Creating a local git repository is easy 👯️:</p>
 <ol type="1">
 <li>Create a new directory for the repository</li>
 <li>Change into the newly created directory with <code>cd</code></li>
@@ -133,33 +153,76 @@ git config --global user.email &quot;youremail@email.com&quot;</code></pre>
 </blockquote>
 </section><section id="tracking-changes-i" class="slide level2">
 <h2>Tracking changes I</h2>
-<p><img src="./figures/git_tracking-changes.svg" alt="tracking-changes" width="130%"/> Commits with small changes are easier to read &amp; review💡️</p>
+<p><img src="./figures/git_tracking-changes.svg" alt="tracking-changes" width="130%"/> <em>Commits with small changes are easier to read &amp; review</em> 💡️</p>
+<aside class="notes">
+<ul>
+<li>Think of git as taking snapshots of changes over the life of a project.</li>
+<li><code>git add</code> specifies what will go in a snapshot by putting things in the staging area</li>
+<li><code>git commit</code> takes the snapshot, and makes a permanent record of it</li>
+<li>You could use <code>git commit --all</code>, but it’s almost always better to explicitly add things to the staging area to avoid committing changes you forgot you made.</li>
+</ul>
+</aside>
 </section><section id="tracking-changes-ii" class="slide level2">
 <h2>Tracking changes II</h2>
-<p>Let’s go through the <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">modify-add-commit cycle</a>:</p>
+<p>Let’s go through the <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">modify-add-commit cycle</a> 🌀️:</p>
 <ol type="1">
 <li>Create/Change files &amp; folders within your new repository</li>
 <li>Add files/folders you want to track: <code>git add filename</code></li>
 <li>Record changes as a commit:<br />
 <code>git commit -m "Meaningful commit message"</code></li>
+<li>Repeat 🔁️</li>
 </ol>
 <blockquote>
-<p>Use <code>git status</code> at every step to monitor what happened</p>
+<p>Use <code>git status</code> to monitor the current status of your repository.</p>
 </blockquote>
-</section><section id="traveling-back-through-time" class="slide level2">
-<h2>Traveling back through time</h2>
+</section><section id="exploring-history" class="slide level2">
+<h2>Exploring history</h2>
+<p>How can we look at all the tracked changes? 👁️</p>
 <ul>
-<li>git checkout</li>
-<li>git diff</li>
-<li>gitk/gitg/github-desktop</li>
+<li>Use <code>git log</code> to look at the repository’s history</li>
+<li>Change something in a file and try <code>git diff</code></li>
+<li>Commits can be referred to using its ID. Try comparing a file to a specific commit.</li>
+</ul>
+<blockquote>
+<p>The most recent commit is referred to by the identifier <code>HEAD</code>. What does <code>git diff HEAD~2</code> do?</p>
+</blockquote>
+<aside class="notes">
+<ul>
+<li>Limit log size with <code>git log -3</code> and show diffs with <code>-p</code></li>
+<li>Press <code>/</code> and type something to search. Navigate with <code>N</code></li>
+<li><code>git diff --color-words</code> shows changes on word level</li>
+<li><code>git diff --staged</code> shows changes between staging area and repository</li>
+</ul>
+<p>A Git commit ID is a SHA-1 hash of every important thing about the commit, e.g.:</p>
+<ul>
+<li>A checksum of the tree contents</li>
+<li>The parent commit id (if this is a merge, there will be more parents)</li>
+<li>The author of the commit with timestamp</li>
+<li>The committer of the commit with timestamp</li>
+<li>The commit message</li>
+</ul>
+</aside>
+</section><section id="time-traveling" class="slide level2">
+<h2>Time traveling</h2>
+<p>Oops I made some bad choices, how can I go back in time? ⌚️</p>
+<ul>
+<li><p>git checkout</p></li>
+<li><p>gitk/gitg/github-desktop</p></li>
 </ul>
 </section><section id="ignoring-things" class="slide level2">
 <h2>Ignoring things</h2>
 <ul>
 <li>Use the .gitignore file to ignore certain files/folders</li>
 </ul>
-</section><section id="summary-of-basic-git-commands" class="slide level2">
-<h2>Summary of basic git commands</h2>
+</section><section id="basic-git-commands" class="slide level2">
+<h2>Basic git commands</h2>
+<pre><code>git init                // Initialize local git repository
+git status              // Check status of working tree
+git add [filename]      // Add file(s) to staging area
+git commit -m &quot;message&quot; // Commit changes to repository
+git log                 // Show commit logs
+git diff                // Show changes between commits</code></pre>
+<p>Get a more elaborate git cheatsheet from <a href="https://github.github.com/training-kit/">GitHub Help</a>.</p>
 </section></section>
 <section><section id="iv.-collaboration" class="title-slide slide level1" data-background="#FF4081"><h1>IV. Collaboration</h1></section><section id="git-repository-hosting-services" class="slide level2">
 <h2>Git-repository hosting services</h2>
