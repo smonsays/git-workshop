@@ -4,6 +4,8 @@ author: Simon Schug
 date: 26 April 2019
 ---
 
+**TODO** YOU vs WE
+
 # I. Introduction {data-background=#FF4081}
 
 ## What is git?
@@ -143,10 +145,11 @@ Let's go through the [modify-add-commit cycle](https://git-scm.com/book/en/v2/Gi
 > Use `git status` to monitor the current status of your repository.
 
 ## Ignoring things
-**TODO**
-What if there are files for which you don't want to track changes?
+Files you don't want to track can be ignored 😑️.
 
-- Use the .gitignore file to ignore certain files/folders
+- Create a .gitignore text file
+- Add `files`, `folders/` or whole patterns `*.dat`
+- You can exclude certain files from being ignored `!final.dat `
 
 ## Exploring history
 How can we look at all the tracked changes? 👁️
@@ -174,15 +177,33 @@ A Git commit ID is a SHA-1 hash of every important thing about the commit, e.g.:
 
 </aside>
 
+## Alternate realities
+**TODO** branches!
+
 
 ## Time traveling
-Oops I made some bad choices, how can I go back in time? ⌚️
+**TODO: Exploring history done?**
+_Oops_ I made some bad choices, how can I go back in time? 🕓️
 
-- Revert unstaged changes: `git checkout HEAD [filename]`
+- Can revert a single file (careful❗️) with\
+`git checkout [commit-id] [filename]`
+- Time travel with all files using\
+`git checkout -b [new-branch] [commit-id]`
+- Careful, don't use `git checkout [commit-id]`. It will make you [loose your HEAD](https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit)
 
-- gitk/gitg/github-desktop
+> What is the detached HEAD state & how can you avoid it?
 
+<aside class="notes">
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
 
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+`git checkout -b <new-branch-name>`
+
+</aside>
 
 ## Basic git commands
 ```

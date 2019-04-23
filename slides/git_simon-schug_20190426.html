@@ -175,6 +175,14 @@ git config --global user.email &quot;youremail@email.com&quot;</code></pre>
 <blockquote>
 <p>Use <code>git status</code> to monitor the current status of your repository.</p>
 </blockquote>
+</section><section id="ignoring-things" class="slide level2">
+<h2>Ignoring things</h2>
+<p>Files you don’t want to track can be ignored 😑️.</p>
+<ul>
+<li>Create a .gitignore text file</li>
+<li>Add <code>files</code>, <code>folders/</code> or whole patterns <code>*.dat</code></li>
+<li>You can exclude certain files from being ignored <code>!final.dat</code></li>
+</ul>
 </section><section id="exploring-history" class="slide level2">
 <h2>Exploring history</h2>
 <p>How can we look at all the tracked changes? 👁️</p>
@@ -192,6 +200,7 @@ git config --global user.email &quot;youremail@email.com&quot;</code></pre>
 <li>Press <code>/</code> and type something to search. Navigate with <code>N</code></li>
 <li><code>git diff --color-words</code> shows changes on word level</li>
 <li><code>git diff --staged</code> shows changes between staging area and repository</li>
+<li>Use only first few characters to compare to commit, e.g. <code>git diff b12a52e [filename]</code></li>
 </ul>
 <p>A Git commit ID is a SHA-1 hash of every important thing about the commit, e.g.:</p>
 <ul>
@@ -202,18 +211,27 @@ git config --global user.email &quot;youremail@email.com&quot;</code></pre>
 <li>The commit message</li>
 </ul>
 </aside>
+</section><section id="alternate-realities" class="slide level2">
+<h2>Alternate realities</h2>
+<p><strong>TODO</strong> branches!</p>
 </section><section id="time-traveling" class="slide level2">
 <h2>Time traveling</h2>
-<p>Oops I made some bad choices, how can I go back in time? ⌚️</p>
+<p><strong>TODO: Exploring history done?</strong> <em>Oops</em> I made some bad choices, how can I go back in time? 🕓️</p>
 <ul>
-<li><p>git checkout</p></li>
-<li><p>gitk/gitg/github-desktop</p></li>
+<li>Can revert a single file (careful❗️) with<br />
+<code>git checkout [commit-id] [filename]</code></li>
+<li>Time travel with all files using<br />
+<code>git checkout -b [new-branch] [commit-id]</code></li>
+<li>Careful, don’t use <code>git checkout [commit-id]</code>. It will make you <a href="https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit">loose your HEAD</a></li>
 </ul>
-</section><section id="ignoring-things" class="slide level2">
-<h2>Ignoring things</h2>
-<ul>
-<li>Use the .gitignore file to ignore certain files/folders</li>
-</ul>
+<blockquote>
+<p>What is the detached HEAD state &amp; how can you avoid it?</p>
+</blockquote>
+<aside class="notes">
+<p>You are in ‘detached HEAD’ state. You can look around, make experimental changes and commit them, and you can discard any commits you make in this state without impacting any branches by performing another checkout.</p>
+<p>If you want to create a new branch to retain commits you create, you may do so (now or later) by using -b with the checkout command again. Example:</p>
+<p><code>git checkout -b &lt;new-branch-name&gt;</code></p>
+</aside>
 </section><section id="basic-git-commands" class="slide level2">
 <h2>Basic git commands</h2>
 <pre><code>git init                // Initialize local git repository
