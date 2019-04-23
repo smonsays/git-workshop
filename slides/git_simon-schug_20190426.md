@@ -4,7 +4,7 @@ author: Simon Schug
 date: 26 April 2019
 ---
 
-# I. Introduction {data-background=##FF4081}
+# I. Introduction {data-background=#FF4081}
 
 ## Organized version control
 Overcome
@@ -59,18 +59,59 @@ You have 2 options:
 	- Open the dmg and right-click open the *pkg to install
 	- Open a terminal & check if it works by entering `git`
 
+## Quick Bash Primer
+Git is primarily used in the command line (Bash). To get started, here are some useful commands 
+
+- `pwd` to print the working directory
+- `cd [folder]` to change the working directory
+- `ls` to list files/folders
+- `mkdir` to make a new directory
+- `nano [filename]` as a simple text editor
+
 
 # III. Version Control {data-background=#FF4081}
 
-## Setting up git
+## Configuring git
+Since this is our first time with git, we tell it who we are 🙋️:
+```
+git config --global user.name "Your Name"
+git config --global user.email "youremail@email.com"
+```
+which text editor ✍️ we prefer:
+```
+git config --global core.editor "nano"
+```
+and check ☑️ if everything is set up properly:
+```
+git config --list
+```
 
 ## Creating a local repository
+Creating a local git repository is easy:
 
-- git init
+1. Create a new directory for the repository
+2. Change into the newly created directory with `cd`
+3. Run `git init` to initialize the repository
+4. Check the status of the repository with `git status` 
+\
+
+> _Where does git store its information?_\
+> _Which files & folders will it track?_
 
 
-## Tracking changes
-- Many commits with smaller changes are easier to read and review
+## Tracking changes I
+<img src="./figures/git_tracking-changes.svg" alt="tracking-changes" width="130%"/>
+Commits with small changes are easier to read & review💡️
+
+## Tracking changes II
+Let's go through the [modify-add-commit cycle](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository):
+
+1. Create/Change files & folders within your new repository
+2. Add files/folders you want to track: `git add filename`
+3. Record changes as a commit:\
+`git commit -m "Meaningful commit message"`
+
+> Use `git status` at every step to monitor what happened
 
 ## Traveling back through time
 
@@ -82,7 +123,7 @@ You have 2 options:
 
 - Use the .gitignore file to ignore certain files/folders
 
-
+## Summary of basic git commands
 
 
 

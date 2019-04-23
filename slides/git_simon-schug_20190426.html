@@ -43,7 +43,7 @@
   <p class="date">26 April 2019</p>
 </section>
 
-<section><section id="i.-introduction" class="title-slide slide level1" data-background="##FF4081"><h1>I. Introduction</h1></section><section id="organized-version-control" class="slide level2">
+<section><section id="i.-introduction" class="title-slide slide level1" data-background="#FF4081"><h1>I. Introduction</h1></section><section id="organized-version-control" class="slide level2">
 <h2>Organized version control</h2>
 <p>Overcome</p>
 <blockquote>
@@ -97,19 +97,55 @@ sudo apt install git</code></pre>
 <li>Open a terminal &amp; check if it works by entering <code>git</code></li>
 </ul></li>
 </ol>
+</section><section id="quick-bash-primer" class="slide level2">
+<h2>Quick Bash Primer</h2>
+<p>Git is primarily used in the command line (Bash). To get started, here are some useful commands</p>
+<ul>
+<li><code>pwd</code> to print the working directory</li>
+<li><code>cd [folder]</code> to change the working directory</li>
+<li><code>ls</code> to list files/folders</li>
+<li><code>mkdir</code> to make a new directory</li>
+<li><code>nano [filename]</code> as a simple text editor</li>
+</ul>
 </section></section>
-<section><section id="iii.-version-control" class="title-slide slide level1" data-background="#FF4081"><h1>III. Version Control</h1></section><section id="setting-up-git" class="slide level2">
-<h2>Setting up git</h2>
+<section><section id="iii.-version-control" class="title-slide slide level1" data-background="#FF4081"><h1>III. Version Control</h1></section><section id="configuring-git" class="slide level2">
+<h2>Configuring git</h2>
+<p>Since this is our first time with git, we tell it who we are 🙋️:</p>
+<pre><code>git config --global user.name &quot;Your Name&quot;
+git config --global user.email &quot;youremail@email.com&quot;</code></pre>
+<p>which text editor ✍️ we prefer:</p>
+<pre><code>git config --global core.editor &quot;nano&quot;</code></pre>
+<p>and check ☑️ if everything is set up properly:</p>
+<pre><code>git config --list</code></pre>
 </section><section id="creating-a-local-repository" class="slide level2">
 <h2>Creating a local repository</h2>
-<ul>
-<li>git init</li>
-</ul>
-</section><section id="tracking-changes" class="slide level2">
-<h2>Tracking changes</h2>
-<ul>
-<li>Many commits with smaller changes are easier to read and review</li>
-</ul>
+<p>Creating a local git repository is easy:</p>
+<ol type="1">
+<li>Create a new directory for the repository</li>
+<li>Change into the newly created directory with <code>cd</code></li>
+<li>Run <code>git init</code> to initialize the repository</li>
+<li>Check the status of the repository with <code>git status</code><br />
+</li>
+</ol>
+<blockquote>
+<p><em>Where does git store its information?</em><br />
+<em>Which files &amp; folders will it track?</em></p>
+</blockquote>
+</section><section id="tracking-changes-i" class="slide level2">
+<h2>Tracking changes I</h2>
+<p><img src="./figures/git_tracking-changes.svg" alt="tracking-changes" width="130%"/> Commits with small changes are easier to read &amp; review💡️</p>
+</section><section id="tracking-changes-ii" class="slide level2">
+<h2>Tracking changes II</h2>
+<p>Let’s go through the <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">modify-add-commit cycle</a>:</p>
+<ol type="1">
+<li>Create/Change files &amp; folders within your new repository</li>
+<li>Add files/folders you want to track: <code>git add filename</code></li>
+<li>Record changes as a commit:<br />
+<code>git commit -m "Meaningful commit message"</code></li>
+</ol>
+<blockquote>
+<p>Use <code>git status</code> at every step to monitor what happened</p>
+</blockquote>
 </section><section id="traveling-back-through-time" class="slide level2">
 <h2>Traveling back through time</h2>
 <ul>
@@ -122,6 +158,8 @@ sudo apt install git</code></pre>
 <ul>
 <li>Use the .gitignore file to ignore certain files/folders</li>
 </ul>
+</section><section id="summary-of-basic-git-commands" class="slide level2">
+<h2>Summary of basic git commands</h2>
 </section></section>
 <section><section id="iv.-collaboration" class="title-slide slide level1" data-background="#FF4081"><h1>IV. Collaboration</h1></section><section id="git-repository-hosting-services" class="slide level2">
 <h2>Git-repository hosting services</h2>
