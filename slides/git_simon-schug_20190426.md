@@ -3,9 +3,6 @@ title: "Git Workshop"
 author: Simon Schug
 date: 26 April 2019
 ---
-
-**TODO** YOU vs WE
-
 # I. Introduction {data-background=#FF4081}
 
 ## What is git?
@@ -79,7 +76,7 @@ You have 2 options:
 2. Use the [*.dmg installer](https://git-scm.com/downloads)
 
 	- Download latest source release for MacOS
-	- Open the dmg and right-click open the *pkg to install
+	- Open the dmg and right-click open the *.pkg to install
 	- Open a terminal & check if it works by entering `git`
 
 ## Quick Bash Primer
@@ -90,27 +87,28 @@ Git is primarily used in the command line (Bash). To get started, here are some 
 - `ls` to list files/folders
 - `mkdir` to make a new directory
 - `nano [filename]` as a simple text editor
+- `man [command]` reference manual
 
 
 # III. Version Control {data-background=#FF4081}
 
 ## Configuring git
-Since this is your first time with git, tell it who you are 🙋️:
+Since this is your first time with git, tell it who you are 🙋️
 ```
 git config --global user.name "Your Name"
 git config --global user.email "youremail@email.com"
 ```
-which text editor ✍️ you prefer:
+which text editor ✍️ you prefer
 ```
 git config --global core.editor "nano"
 ```
-and check ☑️ if everything is set up properly:
+and check ☑️ if everything is set up properly
 ```
 git config --list
 ```
 
 ## Creating a local repository
-Creating a local git repository is easy 👯️:
+Creating a local git repository is easy 👯️
 
 1. Create a new directory for the repository
 2. Change into the newly created directory with `cd`
@@ -124,7 +122,7 @@ Creating a local git repository is easy 👯️:
 
 ## Tracking changes I
 <img src="./figures/git_tracking-changes.svg" alt="tracking-changes" width="130%"/>
-_Commits with small changes are easier to read & review_ 💡️
+_Commits with small changes are easier to read & review_ 💡️.
 
 <aside class="notes">
 - Think of git as taking snapshots of changes over the life of a project.
@@ -134,7 +132,7 @@ _Commits with small changes are easier to read & review_ 💡️
 </aside>
 
 ## Tracking changes II
-Let's go through the [modify-add-commit cycle](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository) 🌀️:
+Let's go through the [modify-add-commit cycle](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository) 🌀️
 
 1. Create/Change files & folders within your new repository
 2. Add files/folders you want to track: `git add filename`
@@ -145,13 +143,13 @@ Let's go through the [modify-add-commit cycle](https://git-scm.com/book/en/v2/Gi
 > Use `git status` to monitor the current status of your repository. What tricks does it tell you?
 
 ## Ignoring things
-Files you don't want to track can be ignored 😑️.
+Files you don't want to track can be ignored 😑️
 
 - Create a .gitignore text file
 - Add `files`, `folders/` or whole patterns `*.dat`
 - Exclude specific files from being ignored with `!filename `
 
-> For common use-cases prefabricated .gitignore files most likely already exist 🌐️.
+> For common use-cases prefabricated .gitignore files most likely already exist.
 
 ## Exploring history
 How can you see the tracked changes 👁️? 
@@ -182,14 +180,43 @@ A Git commit ID is a SHA-1 hash of every important thing about the commit, e.g.:
 
 </aside>
 
-## Alternate realities
-**TODO** branches!
+## Alternate realities I
+<img src="./figures/branches.svg" alt="tracking-changes" width="100%"/>
+_Branch operations are inexpensive in git_ 💸️.
 
+<aside class="notes">
+- A branch represents an independent line of development. 
+- You can think of them as a way to request a brand new working directory, staging area, and project history. 
+</aside>
+
+## Alternate realities II
+Exploring an idea without changing the main project 💫️
+
+- Use `git branch [new-branch]` to create a new branch
+- Switch to it with `git checkout [new-branch]`
+- Switch back to master and merge your changes with\
+`git merge [new-branch]`
+
+> What happens when both the master and the branch change the same part of a file?
+
+## Conflicting realities
+Merge conflicts can arise when the same file is changed in multiple branches ⚔️
+
+- Create a merge conflict between two branches
+- Resolve the conflict manually and look at the resulting graph with `git log --graph`
+- See [Stackoverflow](https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git) for information on mergetools
+
+## Avoiding conflicts
+Resolving conflicts takes time, try to avoid them ✋️
+
+1. Modularize your files into smaller ones
+2. Make smaller and more atomic commits
+3. Use separate branches to segregate work
 
 ## Time traveling
 _Oops I made some bad choices, how can I go back in time?_ 🕓️
 
-- Revert a single file (this deletes non-commited changes❗️) with `git checkout [commit-id] [filename]`
+- Revert a single file (**this deletes non-commited changes**❗️) with `git checkout [commit-id] [filename]`
 - Time travel with all files using\
 `git checkout -b [new-branch] [commit-id]`
 - Careful, don't use `git checkout [commit-id]`. It will make you [loose your HEAD](https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit)
@@ -200,24 +227,25 @@ _Oops I made some bad choices, how can I go back in time?_ 🕓️
 In 'detached HEAD' state you can look around, make experimental changes and commit them without impacting any branches (i.e. commits are not recorded (but they exist)).
 
 Since files can be reverted individually, it makes sense to heavily modularize your work.
-
 </aside>
 
 ## Basic git commands
 ```
-git init				// Initialize local git repository
-git status				// Check status of working tree
-git add [filename]		// Add file(s) to staging area
-git commit -m "message"	// Commit changes to repository
-git log					// Show commit logs
-git diff				// Show changes between commits
+git init		// Initialize local git repository
+git status		// Check status of working tree
+git add			// Add file(s) to staging area
+git commit		// Commit changes to repository
+git log			// Show commit logs
+git diff		// Show changes between commits
+git branch		// Create, list and delete branches
+git checkout	// Switch branches or restore files
 ```
 Get a more elaborate git cheatsheet from [GitHub Help](https://github.github.com/training-kit/). 
 
 
 # IV. Collaboration {data-background=#FF4081}
 
-## Git-repository hosting services
+## Hosting services
 - Github vs. Gitlab
 - Self-hosting
 
@@ -236,11 +264,7 @@ Get a more elaborate git cheatsheet from [GitHub Help](https://github.github.com
 - SSH keys
 
 ## Push & Pull
-
-## Conflicts
-- When multiple people change the same file simultaneously, conflicts can arise
-- Resolve overlapping changes
-- [StackOverflow Help](https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git)
+🏋️
 
 ## Open Science
 Open scientific work is more useful and more highly cited than closed.
@@ -249,7 +273,7 @@ Open scientific work is more useful and more highly cited than closed.
 
 # +++Moooore (Optional) {data-background=#FF4081}
 
-## Git in RStudio
+## Git integration
 - Rstudio projects automatically handle git repositories
 
 ## Issues tracker
