@@ -8,18 +8,15 @@ The workshop is organized by the [Frankfurt Open Science Initiative](https://ope
 ## Tentative Schedule
 
 
-09:30 - 10:00 Git - An Introduction for Scientists </br>
-10:00 - 10:30 Installation & trouble shooting </br>
-10:30 - 11:45 Git quickstart </br>
+09:30 - 10:00 Quick introdcution to git </br>
+10:00 - 10:30 Setup & trouble shooting </br>
+10:30 - 11:45 Version control with git</br>
 11:45 - 12:00 Q & A </br>
 
 12:00 - 13:00 Lunch
 
-13:00 - 13:30  </br>
-13:30 - 14:30  </br>
-14:30 - 15:15  </br>
-15:15 - 16:00  </br>
-16:00 - 17:00  </br>
+13:00 - 14:00  Version control with git </br>
+14:00 - 17:00  Collaboration with GitHub </br>
 
 ## Questions
 
