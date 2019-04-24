@@ -52,28 +52,19 @@
 <li class="fragment">Revert back at any time 🕓️</li>
 <li class="fragment">Collaborate with others (even yourself) 🤝️</li>
 </ul>
+</section><section id="why-do-i-need-it" class="slide level2">
+<h2>Why do I need it?</h2>
+<p><a href="http://phdcomics.com/comics/archive.php?comicid=1531"><img src="http://phdcomics.com/comics/archive/phd101212s.gif" alt="phd_comics-1531" width="40%"/></a></p>
 </section><section id="concepts" class="slide level2">
 <h2>Concepts</h2>
 <ul>
-<li>Keep track of file history by taking snapshots 📸️</li>
+<li>Unlimited undo for your files using snapshots 📸️</li>
 <li>You decide when to take a snapshot 💪️</li>
-<li>Repositories can be used locally or with a server 🌐️</li>
+<li>Many people can work in parallel - online and offline 👨‍👩‍👧‍👦️</li>
 </ul>
-</section><section id="organized-version-control" class="slide level2">
-<h2>Organized version control</h2>
-<p>Overcome</p>
-<blockquote>
-<p>document_2019_final_FINAL!!.docx</p>
-</blockquote>
-<ul>
-<li>Good integration into common editors (Rstudio, vscode, PyCharm, etc.)</li>
-</ul>
-</section><section id="collaboration" class="slide level2">
-<h2>Collaboration</h2>
-<p>Stop sending code per mail to collaborators</p>
-<blockquote>
-<p>Please find attached code_v3.zip</p>
-</blockquote>
+</section><section id="why-are-you-here" class="slide level2">
+<h2>Why are you here?</h2>
+<p><a href="https://xkcd.com/1597/"><img src="https://imgs.xkcd.com/comics/git_2x.png" alt="xkcd-1597" width="40%"/></a></p>
 </section></section>
 <section><section id="ii.-setup" class="title-slide slide level1" data-background="#FF4081"><h1>II. Setup</h1></section><section id="linux-️" class="slide level2">
 <h2>Linux 🐧️</h2>
@@ -122,11 +113,11 @@ sudo apt install git</code></pre>
 <p>Git is primarily used in the command line (Bash). To get started, here are some useful commands:</p>
 <ul>
 <li><code>pwd</code> to print the working directory</li>
-<li><code>cd [folder]</code> to change the working directory</li>
+<li><code>cd &lt;folder&gt;</code> to change the working directory</li>
 <li><code>ls</code> to list files/folders</li>
 <li><code>mkdir</code> to make a new directory</li>
-<li><code>nano [filename]</code> as a simple text editor</li>
-<li><code>man [command]</code> reference manual</li>
+<li><code>nano &lt;filename&gt;</code> as a simple text editor</li>
+<li><code>man &lt;command&gt;</code> reference manual</li>
 </ul>
 </section></section>
 <section><section id="iii.-version-control" class="title-slide slide level1" data-background="#FF4081"><h1>III. Version Control</h1></section><section id="configuring-git" class="slide level2">
@@ -185,7 +176,7 @@ git config --global user.email &quot;youremail@email.com&quot;</code></pre>
 <li>Exclude specific files from being ignored with <code>!filename</code></li>
 </ul>
 <blockquote>
-<p>For common use-cases prefabricated .gitignore files most likely already exist.</p>
+<p>For common use-cases prefabricated .gitignore files most likely already exist, e.g. check <span style="background:rgba(21.2, 21.2, 21.2, 0.8)">.<a href="https://www.gitignore.io/">gitignore.io</a></span>.</p>
 </blockquote>
 </section><section id="exploring-history" class="slide level2">
 <h2>Exploring history</h2>
@@ -223,10 +214,10 @@ git config --global user.email &quot;youremail@email.com&quot;</code></pre>
 <h2>Alternate realities II</h2>
 <p>Exploring an idea without changing the main project 💫️</p>
 <ul>
-<li>Use <code>git branch [new-branch]</code> to create a new branch</li>
-<li>Switch to it with <code>git checkout [new-branch]</code></li>
+<li>Use <code>git branch &lt;new-branch&gt;</code> to create a new branch</li>
+<li>Switch to it with <code>git checkout &lt;new-branch&gt;</code></li>
 <li>Switch back to master and merge your changes with<br />
-<code>git merge [new-branch]</code></li>
+<code>git merge &lt;new-branch&gt;</code></li>
 </ul>
 <blockquote>
 <p>What happens when both the master and the branch change the same part of a file?</p>
@@ -251,10 +242,10 @@ git config --global user.email &quot;youremail@email.com&quot;</code></pre>
 <h2>Time traveling</h2>
 <p><em>Oops I made some bad choices, how can I go back in time?</em> 🕓️</p>
 <ul>
-<li>Revert a single file (<strong>this deletes non-commited changes</strong>❗️) with <code>git checkout [commit-id] [filename]</code></li>
+<li>Revert a single file (<strong>this deletes non-commited changes</strong>❗️) with <code>git checkout &lt;commit-id&gt; &lt;filename&gt;</code></li>
 <li>Time travel with all files using<br />
-<code>git checkout -b [new-branch] [commit-id]</code></li>
-<li>Careful, don’t use <code>git checkout [commit-id]</code>. It will make you <a href="https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit">loose your HEAD</a></li>
+<code>git checkout -b &lt;new-branch&gt; &lt;commit-id&gt;</code></li>
+<li>Careful, don’t use <code>git checkout &lt;commit-id&gt;</code>. It will make you <a href="https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit">loose your HEAD</a></li>
 </ul>
 <blockquote>
 <p>What is the detached HEAD state? How can you avoid it?</p>
@@ -273,51 +264,85 @@ git log         // Show commit logs
 git diff        // Show changes between commits
 git branch      // Create, list and delete branches
 git checkout    // Switch branches or restore files</code></pre>
-<p>Get a more elaborate git cheatsheet from <a href="https://github.github.com/training-kit/">GitHub Help</a>.</p>
+<p>Get a more elaborate git cheat sheet from <a href="https://github.github.com/training-kit/">GitHub Help</a>.</p>
 </section></section>
 <section><section id="iv.-collaboration" class="title-slide slide level1" data-background="#FF4081"><h1>IV. Collaboration</h1></section><section id="hosting-services" class="slide level2">
 <h2>Hosting services</h2>
+<p>To collaborate with others we need a remote 🌐️</p>
 <ul>
-<li>Github vs. Gitlab</li>
-<li>Self-hosting</li>
+<li><a href="https://github.com/">GitHub</a> is the de facto standard with a big community</li>
+<li><a href="https://gitlab.com/">GitLab</a> is an open source alternative often preferred for self-hosted instances</li>
+</ul>
+<blockquote>
+<p>Both offer many additional features like permission management, issue tracking, pull requests…</p>
+</blockquote>
+<aside class="notes">
+Version control comes into its own when we collaborating with others
+</aside>
+</section><section id="setting-up-github" class="slide level2">
+<h2>Setting up GitHub</h2>
+<p>We use <a href="https://github.com/">GitHub</a> for the demonstration 🐈️</p>
+<ul>
+<li>Sign up on GitHub</li>
+<li><em>Optional</em>: <a href="https://help.github.com/en/articles/setting-your-commit-email-address-on-github">Keep your email address private</a></li>
+<li><em>Optional</em>: <a href="https://help.github.com/en/articles/connecting-to-github-with-ssh">Set up SSH</a></li>
 </ul>
 </section><section id="create-a-remote-repository" class="slide level2">
 <h2>Create a remote repository</h2>
-</section><section id="choose-a-license" class="slide level2">
-<h2>Choose a license</h2>
+<p>Create a new, empty repository on GitHub 👶️</p>
 <ul>
-<li>Public work should transparently handle copyright with a license</li>
-<li>You are not a lawyer? Don’t write your own!</li>
-<li>Flavors of Open Source: <a href="https://choosealicense.com/">choosealicense.com</a> helps</li>
+<li>Connect your local repository to the new remote with<br />
+<code>git remote add origin &lt;url&gt;</code></li>
+<li>Push your local changes to the remote with <code>git push -u origin master</code></li>
+<li>Create and edit the README file, it uses <a href="https://guides.github.com/features/mastering-markdown/">Markdown</a> syntax</li>
 </ul>
-</section><section id="create-a-readme" class="slide level2">
-<h2>Create a readme</h2>
-<ul>
-<li>Markdown</li>
-</ul>
-</section><section id="setup-ssh-keys" class="slide level2">
-<h2>Setup SSH keys</h2>
-<ul>
-<li>SSH keys</li>
-</ul>
+<blockquote>
+<p>Repositories should contain a license to handle copyright. <span style="background:rgba(21.2, 21.2, 21.2, 0.8)">.<a href="https://choosealicense.com/">choosealicense</a></span> can help you.</p>
+</blockquote>
 </section><section id="push-pull" class="slide level2">
 <h2>Push &amp; Pull</h2>
-<p>🏋️</p>
-</section><section id="open-science" class="slide level2">
-<h2>Open Science</h2>
-<p>Open scientific work is more useful and more highly cited than closed. - How to handle citations</p>
-</section></section>
-<section><section id="moooore-optional" class="title-slide slide level1" data-background="#FF4081"><h1>+++Moooore (Optional)</h1></section><section id="git-integration" class="slide level2">
-<h2>Git integration</h2>
+<p>To synchronize changes in the local and the remote repository, you can use push &amp; pull 🏋️</p>
 <ul>
-<li>Rstudio projects automatically handle git repositories</li>
+<li>Change the README in the web interface and use<br />
+<code>git pull origin master</code> to copy the changes into your local repository</li>
+<li>Commit a local file change and push it to the remote using <code>git push origin master</code></li>
 </ul>
-</section><section id="issues-tracker" class="slide level2">
-<h2>Issues tracker</h2>
-</section><section id="wiki" class="slide level2">
-<h2>Wiki</h2>
-</section><section id="github-pages" class="slide level2">
-<h2>Github pages</h2>
+<blockquote>
+<p>While <code>git commit</code> only updates your local repository, <code>git push</code> updates the remote with the local changes.</p>
+</blockquote>
+</section><section id="pull-requests" class="slide level2">
+<h2>Pull requests</h2>
+<p>With pull requests, you can propose changes to a repository and ask someone to review, pull and merge your contribution 💌️</p>
+<ul>
+<li>Create a new branch via the web interface and try to discover it locally with <code>git fetch</code> &amp;&amp; <code>git branch -r</code></li>
+<li>Check out the new branch locally by creating a new local branch with the same name:<br />
+<code>git checkout -b &lt;branch&gt; &lt;remote&gt;/&lt;branch&gt;</code></li>
+<li>Push local changes to the remote and perform a pull request via the web interface</li>
+</ul>
+<aside class="notes">
+If something wants to know about the different merge possibilities, this is what <a href="https://stackoverflow.com/questions/2427238/in-git-what-is-the-difference-between-merge-squash-and-rebase">Stackoverflow</a> has to say.
+</aside>
+</section><section id="basic-collaborative-workflow" class="slide level2">
+<h2>Basic Collaborative Workflow</h2>
+<p>You are now ready to collaborate with others using git. Keep in mind to sync your work frequently:</p>
+<ol type="1">
+<li>Update your local repository with <code>git pull</code></li>
+<li>Make local changes and stage them with <code>git add</code></li>
+<li>Commit your changes with <code>git commit</code></li>
+<li>Upload the changes to the remote with <code>git push</code></li>
+</ol>
+</section></section>
+<section><section id="moooore" class="title-slide slide level1" data-background="#FF4081"><h1>+++Moooore</h1></section><section id="there-is" class="slide level2">
+<h2>There is…</h2>
+<p>… so much more to discover 🔭️</p>
+<ul>
+<li>Many text editors and IDEs have a deep git integration</li>
+<li>GitHub/GitLab integrate many more tools to simplify collaboration: Issue tracker, Wiki’s, website hosting</li>
+<li>Numerous GUI’s try to streamline your git experience</li>
+</ul>
+<blockquote>
+<p>You are prepared to discover those things on your own 🚀️</p>
+</blockquote>
 </section></section>
     </div>
   </div>

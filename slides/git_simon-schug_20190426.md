@@ -15,26 +15,17 @@ date: 26 April 2019
 >- Revert back at any time 🕓️
 >- Collaborate with others (even yourself) 🤝️
 
+## Why do I need it?
+<a href="http://phdcomics.com/comics/archive.php?comicid=1531"><img src="http://phdcomics.com/comics/archive/phd101212s.gif" alt="phd_comics-1531" width="40%"/></a>
 
-## Concepts
+## Key Concepts
 
-- Keep track of file history by taking snapshots 📸️
+- Unlimited undo for your files using snapshots 📸️
 - You decide when to take a snapshot 💪️
-- Repositories can be used locally or with a server 🌐️
+- Many people can work in parallel - online and offline 👨‍👩‍👧‍👦️
 
-## Organized version control
-Overcome
-
-> document_2019_final_FINAL!!.docx
-
-- Good integration into common editors (Rstudio, vscode, PyCharm, etc.)
-
-## Collaboration
-Stop sending code per mail to collaborators
-
-> Please find attached code_v3.zip
-
-
+## Why are you here?
+<a href="https://xkcd.com/1597/"><img src="https://imgs.xkcd.com/comics/git_2x.png" alt="xkcd-1597" width="40%"/></a>
 
 
 # II. Setup {data-background=#FF4081}
@@ -83,11 +74,11 @@ You have 2 options:
 Git is primarily used in the command line (Bash). To get started, here are some useful commands:
 
 - `pwd` to print the working directory
-- `cd [folder]` to change the working directory
+- `cd <folder>` to change the working directory
 - `ls` to list files/folders
 - `mkdir` to make a new directory
-- `nano [filename]` as a simple text editor
-- `man [command]` reference manual
+- `nano <filename>` as a simple text editor
+- `man <command>` reference manual
 
 
 # III. Version Control {data-background=#FF4081}
@@ -149,7 +140,7 @@ Files you don't want to track can be ignored 😑️
 - Add `files`, `folders/` or whole patterns `*.dat`
 - Exclude specific files from being ignored with `!filename `
 
-> For common use-cases prefabricated .gitignore files most likely already exist.
+> For common use-cases prefabricated .gitignore files most likely already exist, e.g. check <span style="background:rgba(21.2, 21.2, 21.2, 0.8)">.[gitignore.io](https://www.gitignore.io/)</span>.
 
 ## Exploring history
 How can you see the tracked changes 👁️? 
@@ -192,10 +183,10 @@ _Branch operations are inexpensive in git_ 💸️.
 ## Alternate realities II
 Exploring an idea without changing the main project 💫️
 
-- Use `git branch [new-branch]` to create a new branch
-- Switch to it with `git checkout [new-branch]`
+- Use `git branch <new-branch>` to create a new branch
+- Switch to it with `git checkout <new-branch>`
 - Switch back to master and merge your changes with\
-`git merge [new-branch]`
+`git merge <new-branch>`
 
 > What happens when both the master and the branch change the same part of a file?
 
@@ -216,10 +207,10 @@ Resolving conflicts takes time, try to avoid them ✋️
 ## Time traveling
 _Oops I made some bad choices, how can I go back in time?_ 🕓️
 
-- Revert a single file (**this deletes non-commited changes**❗️) with `git checkout [commit-id] [filename]`
+- Revert a single file (**this deletes non-commited changes**❗️) with `git checkout <commit-id> <filename>`
 - Time travel with all files using\
-`git checkout -b [new-branch] [commit-id]`
-- Careful, don't use `git checkout [commit-id]`. It will make you [loose your HEAD](https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit)
+`git checkout -b <new-branch> <commit-id>`
+- Careful, don't use `git checkout <commit-id>`. It will make you [loose your HEAD](https://www.git-tower.com/learn/git/faq/detached-head-when-checkout-commit)
 
 > What is the detached HEAD state? How can you avoid it?
 
@@ -240,44 +231,79 @@ git diff		// Show changes between commits
 git branch		// Create, list and delete branches
 git checkout	// Switch branches or restore files
 ```
-Get a more elaborate git cheatsheet from [GitHub Help](https://github.github.com/training-kit/). 
+Get a more elaborate git cheat sheet from [GitHub Help](https://github.github.com/training-kit/). 
 
 
 # IV. Collaboration {data-background=#FF4081}
 
 ## Hosting services
-- Github vs. Gitlab
-- Self-hosting
+To collaborate with others we need a remote 🌐️
+
+- [GitHub](https://github.com/) is the de facto standard with a big community
+- [GitLab](https://gitlab.com/) is an open source alternative often preferred for self-hosted instances
+
+> Both offer many additional features like permission management, issue tracking, pull requests...
+
+<aside class="notes">
+Version control comes into its own when we collaborating with others 
+</aside>
+
+## Setting up GitHub
+We use [GitHub](https://github.com/) for the demonstration 🐈️
+
+- Sign up on GitHub
+- _Optional_: [Keep your email address private](https://help.github.com/en/articles/setting-your-commit-email-address-on-github)
+- _Optional_: [Set up SSH](https://help.github.com/en/articles/connecting-to-github-with-ssh)
+
 
 ## Create a remote repository
+Create a new, empty repository on GitHub 👶️
 
-## Choose a license
-- Public work should transparently handle copyright with a license
-- You are not a lawyer? Don't write your own!
-- Flavors of Open Source: [choosealicense.com](https://choosealicense.com/) helps
+- Connect your local repository to the new remote with\
+`git remote add origin <url>`
+- Push your local changes to the remote with `git push -u origin master`
+- Create and edit the README file, it uses [Markdown](https://guides.github.com/features/mastering-markdown/) syntax
 
-
-## Create a readme
-- Markdown 
-
-## Setup SSH keys
-- SSH keys
+> Repositories should contain a license to handle copyright. <span style="background:rgba(21.2, 21.2, 21.2, 0.8)">.[choosealicense](https://choosealicense.com/)</span> can help you.
 
 ## Push & Pull
-🏋️
+To synchronize changes in the local and the remote repository, you can use push & pull 🏋️
 
-## Open Science
-Open scientific work is more useful and more highly cited than closed.
-- How to handle citations
+- Change the README in the web interface and use\
+`git pull origin master` to copy the changes into your local repository
+- Commit a local file change and push it to the remote using `git push origin master`
 
 
-# +++Moooore (Optional) {data-background=#FF4081}
+> While `git commit` only updates your local repository, `git push` updates the remote with the local changes. 
 
-## Git integration
-- Rstudio projects automatically handle git repositories
+## Pull requests
+With pull requests, you can propose changes to a repository and ask someone to review, pull and merge your contribution 💌️
 
-## Issues tracker
+- Create a new branch via the web interface and try to discover it locally with `git fetch` && `git branch -r`
+- Check out the new branch locally by creating a new local branch with the same name: \
+`git checkout -b <branch> <remote>/<branch>`
+- Push local changes to the remote and perform a pull request via the web interface
 
-## Wiki
+<aside class="notes">
+If something wants to know about the different merge possibilities, this is what [Stackoverflow](https://stackoverflow.com/questions/2427238/in-git-what-is-the-difference-between-merge-squash-and-rebase) has to say.
+</aside>
 
-## Github pages
+## Basic Collaborative Workflow
+You are now ready to collaborate with others using git. Keep in mind to sync your work frequently:
+
+1. Update your local repository with `git pull`
+2. Make local changes and stage them with `git add`
+3. Commit your changes with `git commit`
+4. Upload the changes to the remote with `git push`
+
+
+# +++Moooore {data-background=#FF4081}
+
+## There is...
+... so much more to discover 🔭️
+
+- Many text editors and IDEs have a deep git integration
+- GitHub/GitLab integrate many more tools to simplify collaboration: Issue tracker, Wiki's, website hosting
+- Numerous GUI's try to streamline your git experience
+
+> You are prepared to discover those things on your own 🚀️
