@@ -261,7 +261,7 @@ To collaborate with others we need a remote 🌐️
 > Both offer many additional features like permission management, issue tracking, pull requests...
 
 <aside class="notes">
-Version control comes into its own when we collaborating with others 
+Version control comes into its own when we collaborate with others 
 </aside>
 
 ## Setting up GitHub
@@ -301,7 +301,7 @@ With pull requests, you can propose changes to a repository and ask someone to r
 - Push local changes to the remote and perform a pull request via the web interface
 
 <aside class="notes">
-If something wants to know about the different merge possibilities, this is what [Stackoverflow](https://stackoverflow.com/questions/2427238/in-git-what-is-the-difference-between-merge-squash-and-rebase) has to say.
+If someone wants to know about the different merge possibilities, this is what [Stackoverflow](https://stackoverflow.com/questions/2427238/in-git-what-is-the-difference-between-merge-squash-and-rebase) has to say.
 </aside>
 
 ## Basic Collaborative Workflow
