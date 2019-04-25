@@ -22,3 +22,10 @@ The workshop is organized by the [Frankfurt Open Science Initiative](https://ope
 
 If you have any questions wrt repo and/or workshop, please don't hesitate to
 open an issue or contact me.
+
+## Additional Resources
+
+- [Reproducible science and collaboration with Git and GitHub](https://uoftcoders.github.io/rcourse/lec15-git-projects.html)
+- [Software Carpentry: Version Control with Git](https://swcarpentry.github.io/git-novice/)
+- [GitHub git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+- [The GitHub workflow](https://guides.github.com/introduction/flow/)

@@ -1,9 +1,19 @@
 ---
 title: "Git Workshop"
 author: Simon Schug
-date: 26 April 2019
+date: 26. April 2019
 ---
 # I. Introduction {data-background=#FF4081}
+
+## Why are you here?
+<a href="https://xkcd.com/1597/"><img src="https://imgs.xkcd.com/comics/git_2x.png" alt="xkcd-1597" width="40%"/></a>
+
+<aside class="notes">
+
+- Git is powerful, but with great power comes great complexity
+- Git is primarily used on the command line (although GUIs and web interfaces exist)
+- Git has a little bit of a learning curve, but today we will tackle it
+</aside>
 
 ## What is git?
 
@@ -11,36 +21,36 @@ date: 26 April 2019
 
 [Version Control System](https://en.wikipedia.org/wiki/Version_control) for tracking changes in files.
 
->- See who made what changes when 👀️
->- Revert back at any time 🕓️
->- Collaborate with others (even yourself) 🤝️
+>- Unlimited undo for your files using snapshots 📸️
+>- Distributed repositories - online and offline 🌍️
+>- See who made what changes when and why 👀️
 
-## Why do I need it?
+<aside class="notes">
+- You decide when to take a snapshot 💪️
+- Many people can work in parallel  👨‍👩‍👧‍👦️
+- You can use it as your personal lab notebook
+
+</aside>
+
+## Why do you need it?
 <a href="http://phdcomics.com/comics/archive.php?comicid=1531"><img src="http://phdcomics.com/comics/archive/phd101212s.gif" alt="phd_comics-1531" width="40%"/></a>
 
-## Key Concepts
-
-- Unlimited undo for your files using snapshots 📸️
-- You decide when to take a snapshot 💪️
-- Many people can work in parallel - online and offline 👨‍👩‍👧‍👦️
-
-## Why are you here?
-<a href="https://xkcd.com/1597/"><img src="https://imgs.xkcd.com/comics/git_2x.png" alt="xkcd-1597" width="40%"/></a>
-
+<aside class="notes">
+- Collaborating without git: taking turns or excessive communication with duplicates, lost and overlooked things
+- Hosted repositories can be turned into citable objects. The conceptual stages of your work are transparently documented, including who did what and when.
+</aside>
 
 # II. Setup {data-background=#FF4081}
 
 ## Linux 🐧️
-You are probably already done 😎️.
+You are nearly done 🍵️.
 
-1. Open a terminal
-2. Enter the command `git`
-3. If the command was not found install git:
-
+1. Run the following command in a terminal:
 ```
-# e.g. under Ubuntu / Debian
-sudo apt install git
+sudo apt install git-all # Ubuntu / DEB-based
+sudo dnf install git-all # Fedora / RPM-based
 ```
+2. Read [a short history of git](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git)
 
 ## Windows 🏢️
 You have 2 options:
@@ -71,7 +81,7 @@ You have 2 options:
 	- Open a terminal & check if it works by entering `git`
 
 ## Quick Bash Primer
-Git is primarily used in the command line (Bash). To get started, here are some useful commands:
+Some useful commands to get started with Bash 🤖️
 
 - `pwd` to print the working directory
 - `cd <folder>` to change the working directory
@@ -89,7 +99,7 @@ Since this is your first time with git, tell it who you are 🙋️
 git config --global user.name "Your Name"
 git config --global user.email "youremail@email.com"
 ```
-which text editor ✍️ you prefer
+which [text editor](https://swcarpentry.github.io/git-novice/02-setup/index.html) ✍️ you prefer
 ```
 git config --global core.editor "nano"
 ```
@@ -116,10 +126,12 @@ Creating a local git repository is easy 👯️
 _Commits with small changes are easier to read & review_ 💡️.
 
 <aside class="notes">
+
 - Think of git as taking snapshots of changes over the life of a project.
 - `git add` specifies what will go in a snapshot by putting things in the staging area
 - `git commit` takes the snapshot, and makes a permanent record of it
 - You could use `git commit --all`, but it’s almost always better to explicitly add things to the staging area to avoid committing changes you forgot you made.
+
 </aside>
 
 ## Tracking changes II
@@ -153,10 +165,12 @@ How can you see the tracked changes 👁️?
  
 <aside class="notes">
 Git log:
+
 - Limit log size with `-3` and show diffs with `-p`
 - Press `/` and type something to search. Navigate with `N`
 
 git diff:
+
 - `--color-words` shows changes on word level
 - `--staged` shows changes between staging area and repository
 - Compare two commit ids: `git diff b12a52e a983d1 -- [filename]`
@@ -176,8 +190,10 @@ A Git commit ID is a SHA-1 hash of every important thing about the commit, e.g.:
 _Branch operations are inexpensive in git_ 💸️.
 
 <aside class="notes">
+
 - A branch represents an independent line of development. 
-- You can think of them as a way to request a brand new working directory, staging area, and project history. 
+- You can think of them as a way to request a brand new working directory, staging area, and project history.
+- Example: Using a branch for a new feature for the data analysis. When an urgent error is discovered, you can just switch the branch to fix it in your original data analysis
 </aside>
 
 ## Alternate realities II
@@ -289,8 +305,9 @@ If something wants to know about the different merge possibilities, this is what
 </aside>
 
 ## Basic Collaborative Workflow
-You are now ready to collaborate with others using git. Keep in mind to sync your work frequently:
+You are now ready to collaborate with others using git 🏁️
 
+0. Retrieve an existing, hosted repository with `git clone`
 1. Update your local repository with `git pull`
 2. Make local changes and stage them with `git add`
 3. Commit your changes with `git commit`
@@ -303,7 +320,7 @@ You are now ready to collaborate with others using git. Keep in mind to sync you
 ... so much more to discover 🔭️
 
 - Many text editors and IDEs have a deep git integration
-- GitHub/GitLab integrate many more tools to simplify collaboration: Issue tracker, Wiki's, website hosting
-- Numerous GUI's try to streamline your git experience
+- GitHub/GitLab integrate many more tools to simplify collaboration: Issue tracker, wiki's, website hosting
+- [Numerous GUI's](https://en.wikipedia.org/wiki/Comparison_of_Git_GUIs) try to streamline your git experience
 
 > You are prepared to discover those things on your own 🚀️

@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Simon Schug">
-  <meta name="dcterms.date" content="2019-04-26">
   <title>Git Workshop</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -40,42 +39,56 @@
 <section id="title-slide">
   <h1 class="title">Git Workshop</h1>
   <p class="author">Simon Schug</p>
-  <p class="date">26 April 2019</p>
+  <p class="date">26. April 2019</p>
 </section>
 
-<section><section id="i.-introduction" class="title-slide slide level1" data-background="#FF4081"><h1>I. Introduction</h1></section><section id="what-is-git" class="slide level2">
+<section><section id="i.-introduction" class="title-slide slide level1" data-background="#FF4081"><h1>I. Introduction</h1></section><section id="why-are-you-here" class="slide level2">
+<h2>Why are you here?</h2>
+<p><a href="https://xkcd.com/1597/"><img src="https://imgs.xkcd.com/comics/git_2x.png" alt="xkcd-1597" width="40%"/></a></p>
+<aside class="notes">
+<ul>
+<li>Git is powerful, but with great power comes great complexity</li>
+<li>Git is primarily used on the command line (although GUIs and web interfaces exist)</li>
+<li>Git has a little bit of a learning curve, but today we will tackle it</li>
+</ul>
+</aside>
+</section><section id="what-is-git" class="slide level2">
 <h2>What is git?</h2>
 <p><img src="./figures/git.svg" alt="git-logo" width="15%"/></p>
 <p><a href="https://en.wikipedia.org/wiki/Version_control">Version Control System</a> for tracking changes in files.</p>
 <ul>
-<li class="fragment">See who made what changes when 👀️</li>
-<li class="fragment">Revert back at any time 🕓️</li>
-<li class="fragment">Collaborate with others (even yourself) 🤝️</li>
+<li class="fragment">Unlimited undo for your files using snapshots 📸️</li>
+<li class="fragment">Distributed repositories - online and offline 🌍️</li>
+<li class="fragment">See who made what changes when and why 👀️</li>
 </ul>
-</section><section id="why-do-i-need-it" class="slide level2">
-<h2>Why do I need it?</h2>
-<p><a href="http://phdcomics.com/comics/archive.php?comicid=1531"><img src="http://phdcomics.com/comics/archive/phd101212s.gif" alt="phd_comics-1531" width="40%"/></a></p>
-</section><section id="concepts" class="slide level2">
-<h2>Concepts</h2>
+<aside class="notes">
 <ul>
-<li>Unlimited undo for your files using snapshots 📸️</li>
 <li>You decide when to take a snapshot 💪️</li>
-<li>Many people can work in parallel - online and offline 👨‍👩‍👧‍👦️</li>
+<li>Many people can work in parallel 👨‍👩‍👧‍👦️</li>
+<li>You can use it as your personal lab notebook</li>
 </ul>
-</section><section id="why-are-you-here" class="slide level2">
-<h2>Why are you here?</h2>
-<p><a href="https://xkcd.com/1597/"><img src="https://imgs.xkcd.com/comics/git_2x.png" alt="xkcd-1597" width="40%"/></a></p>
+</aside>
+</section><section id="why-do-you-need-it" class="slide level2">
+<h2>Why do you need it?</h2>
+<p><a href="http://phdcomics.com/comics/archive.php?comicid=1531"><img src="http://phdcomics.com/comics/archive/phd101212s.gif" alt="phd_comics-1531" width="40%"/></a></p>
+<aside class="notes">
+<ul>
+<li>Collaborating without git: taking turns or excessive communication with duplicates, lost and overlooked things</li>
+<li>Hosted repositories can be turned into citable objects. The conceptual stages of your work are transparently documented, including who did what and when.</li>
+</ul>
+</aside>
 </section></section>
 <section><section id="ii.-setup" class="title-slide slide level1" data-background="#FF4081"><h1>II. Setup</h1></section><section id="linux-️" class="slide level2">
 <h2>Linux 🐧️</h2>
-<p>You are probably already done 😎️.</p>
+<p>You are nearly done 🍵️.</p>
 <ol type="1">
-<li>Open a terminal</li>
-<li>Enter the command <code>git</code></li>
-<li>If the command was not found install git:</li>
+<li>Run the following command in a terminal:</li>
 </ol>
-<pre><code># e.g. under Ubuntu / Debian
-sudo apt install git</code></pre>
+<pre><code>sudo apt install git-all # Ubuntu / DEB-based
+sudo dnf install git-all # Fedora / RPM-based</code></pre>
+<ol start="2" type="1">
+<li>Read <a href="https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git">a short history of git</a></li>
+</ol>
 </section><section id="windows-️" class="slide level2">
 <h2>Windows 🏢️</h2>
 <p>You have 2 options:</p>
@@ -110,7 +123,7 @@ sudo apt install git</code></pre>
 </ol>
 </section><section id="quick-bash-primer" class="slide level2">
 <h2>Quick Bash Primer</h2>
-<p>Git is primarily used in the command line (Bash). To get started, here are some useful commands:</p>
+<p>Some useful commands to get started with Bash 🤖️</p>
 <ul>
 <li><code>pwd</code> to print the working directory</li>
 <li><code>cd &lt;folder&gt;</code> to change the working directory</li>
@@ -125,7 +138,7 @@ sudo apt install git</code></pre>
 <p>Since this is your first time with git, tell it who you are 🙋️</p>
 <pre><code>git config --global user.name &quot;Your Name&quot;
 git config --global user.email &quot;youremail@email.com&quot;</code></pre>
-<p>which text editor ✍️ you prefer</p>
+<p>which <a href="https://swcarpentry.github.io/git-novice/02-setup/index.html">text editor</a> ✍️ you prefer</p>
 <pre><code>git config --global core.editor &quot;nano&quot;</code></pre>
 <p>and check ☑️ if everything is set up properly</p>
 <pre><code>git config --list</code></pre>
@@ -190,8 +203,17 @@ git config --global user.email &quot;youremail@email.com&quot;</code></pre>
 <p>The most recent commit is referred to by the identifier <code>HEAD</code>. What does <code>git diff HEAD~2</code> do?</p>
 </blockquote>
 <aside class="notes">
-<p>Git log: - Limit log size with <code>-3</code> and show diffs with <code>-p</code> - Press <code>/</code> and type something to search. Navigate with <code>N</code></p>
-<p>git diff: - <code>--color-words</code> shows changes on word level - <code>--staged</code> shows changes between staging area and repository - Compare two commit ids: <code>git diff b12a52e a983d1 -- [filename]</code></p>
+<p>Git log:</p>
+<ul>
+<li>Limit log size with <code>-3</code> and show diffs with <code>-p</code></li>
+<li>Press <code>/</code> and type something to search. Navigate with <code>N</code></li>
+</ul>
+<p>git diff:</p>
+<ul>
+<li><code>--color-words</code> shows changes on word level</li>
+<li><code>--staged</code> shows changes between staging area and repository</li>
+<li>Compare two commit ids: <code>git diff b12a52e a983d1 -- [filename]</code></li>
+</ul>
 <p>A Git commit ID is a SHA-1 hash of every important thing about the commit, e.g.:</p>
 <ul>
 <li>A checksum of the tree contents</li>
@@ -208,6 +230,7 @@ git config --global user.email &quot;youremail@email.com&quot;</code></pre>
 <ul>
 <li>A branch represents an independent line of development.</li>
 <li>You can think of them as a way to request a brand new working directory, staging area, and project history.</li>
+<li>Example: Using a branch for a new feature for the data analysis. When an urgent error is discovered, you can just switch the branch to fix it in your original data analysis</li>
 </ul>
 </aside>
 </section><section id="alternate-realities-ii" class="slide level2">
@@ -324,8 +347,9 @@ If something wants to know about the different merge possibilities, this is what
 </aside>
 </section><section id="basic-collaborative-workflow" class="slide level2">
 <h2>Basic Collaborative Workflow</h2>
-<p>You are now ready to collaborate with others using git. Keep in mind to sync your work frequently:</p>
-<ol type="1">
+<p>You are now ready to collaborate with others using git 🏁️</p>
+<ol start="0" type="1">
+<li>Retrieve an existing, hosted repository with <code>git clone</code></li>
 <li>Update your local repository with <code>git pull</code></li>
 <li>Make local changes and stage them with <code>git add</code></li>
 <li>Commit your changes with <code>git commit</code></li>
@@ -337,8 +361,8 @@ If something wants to know about the different merge possibilities, this is what
 <p>… so much more to discover 🔭️</p>
 <ul>
 <li>Many text editors and IDEs have a deep git integration</li>
-<li>GitHub/GitLab integrate many more tools to simplify collaboration: Issue tracker, Wiki’s, website hosting</li>
-<li>Numerous GUI’s try to streamline your git experience</li>
+<li>GitHub/GitLab integrate many more tools to simplify collaboration: Issue tracker, wiki’s, website hosting</li>
+<li><a href="https://en.wikipedia.org/wiki/Comparison_of_Git_GUIs">Numerous GUI’s</a> try to streamline your git experience</li>
 </ul>
 <blockquote>
 <p>You are prepared to discover those things on your own 🚀️</p>
